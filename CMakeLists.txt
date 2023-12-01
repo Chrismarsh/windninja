@@ -75,8 +75,8 @@ endif(NOT SKIP_GETDATE)
 
 set(VER_STR ${VER_MAJ}.${VER_MIN}.${VER_PATCH})
 configure_file(${PROJECT_SOURCE_DIR}/src/ninja_version.h.in
-               ${CMAKE_BINARY_DIR}/ninja_version.h)
-include_directories(${CMAKE_BINARY_DIR})
+               ${PROJECT_BINARY_DIR}/ninja_version.h)
+include_directories(${PROJECT_BINARY_DIR})
 set(WINDNINJA_VERSION ${VER_STR})
 set(WINDNINJA_VERSION_NAME WindNinja-${VER_STR})
 message(STATUS "VERSION: ${VER_STR}")
@@ -472,8 +472,8 @@ if(BUILD_TYPE MATCHES "debug")
     if(PACKAGE_DEBUG)
         message(STATUS "Copying boost date time file into build/src/gui and build/src/cli")
     endif(PACKAGE_DEBUG)
-    file(COPY "${PROJECT_SOURCE_DIR}/data/date_time_zonespec.csv" DESTINATION "${CMAKE_BINARY_DIR}/src/gui")
-    file(COPY "${PROJECT_SOURCE_DIR}/data/date_time_zonespec.csv" DESTINATION "${CMAKE_BINARY_DIR}/src/cli")
+    file(COPY "${PROJECT_SOURCE_DIR}/data/date_time_zonespec.csv" DESTINATION "${PROJECT_BINARY_DIR}/src/gui")
+    file(COPY "${PROJECT_SOURCE_DIR}/data/date_time_zonespec.csv" DESTINATION "${PROJECT_BINARY_DIR}/src/cli")
 endif(BUILD_TYPE MATCHES "debug")
 
 # CPack related scripting
