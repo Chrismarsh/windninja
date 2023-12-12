@@ -145,7 +145,7 @@ else(WIN32)
     if(APPLE)
         add_library(ninja STATIC ${NINJA_SOURCES})
     else(APPLE)
-       add_library(ninja STATIC SHARED ${NINJA_SOURCES})
+        add_library(ninja ${NINJA_SOURCES})
     endif(APPLE)    
 endif(WIN32)
 

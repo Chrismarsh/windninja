@@ -34,6 +34,8 @@ if(FIRELAB_PACKAGE)
     set(NINJA_CLI ON)
 endif(FIRELAB_PACKAGE)
 
+OPTION(BUILD_SHARED_LIBS "Build shared library on Linux" ON)
+
 # Generate a current version file derived from VERSION
 file(READ ${PROJECT_SOURCE_DIR}/VERSION V)
 string(REPLACE "\n" "" V ${V})
